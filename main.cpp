@@ -41,7 +41,7 @@ int main(){
             break;
 
         case 2:
-             cout << "Enter Product ID: ";
+            cout << "Enter Product ID: ";
             cin >> id;
             cout << "Enter New Stock Quantity: ";
             cin >> stock;
