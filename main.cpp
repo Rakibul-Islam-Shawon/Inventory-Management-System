@@ -37,10 +37,14 @@ int main(){
             cin >> stock;
             cout << "Enter Product Price: ";
             cin >> price;
-            //inventory.addProduct(Product(id, name, stock, price));
+            
             break;
 
         case 2:
+             cout << "Enter Product ID: ";
+            cin >> id;
+            cout << "Enter New Stock Quantity: ";
+            cin >> stock;
             
             break;
 
