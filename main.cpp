@@ -15,7 +15,7 @@ void displayMenu(){
 int main(){
     //cout <<" This a project for a store for management purpose"<<endl;
     
-    int option, stock;
+    int option, stock, quantity;
     string id, name;
     double price;
     
@@ -45,11 +45,13 @@ int main(){
             cin >> id;
             cout << "Enter New Stock Quantity: ";
             cin >> stock;
-            
             break;
 
         case 3:
-            
+            cout << "Enter Product ID: ";
+            cin >> id;
+            cout << "Enter Quantity Sold: ";
+            cin >> quantity;
             break;
 
         case 4:
