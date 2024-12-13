@@ -27,7 +27,7 @@ int main(){
     //cout <<" This a project for a store for management purpose"<<endl;
     
     int option, stock, quantity;
-    string id, name;
+    string id, name, filename;
     double price;
     
     displayMenu();
@@ -70,14 +70,18 @@ int main(){
             break;
 
         case 5:
-            
+            cout << "Enter filename to save inventory: ";
+            cin >> filename;
             break;
 
         case 6:
-            
+            cout << "Enter filename to load inventory: ";
+            cin >> filename;
+            break;
 
         case 7:
-            
+            cout << "Exiting...\n";
+            return 0;
 
         default:
             cout << "Invalid choice! Try again.\n";
