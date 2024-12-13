@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Product {
@@ -6,6 +7,9 @@ class Product {
     string productName;
     int stockQuantity;
     double price;
+};
+class Inventory {
+    map<string, Product> productList;
 };
 
 void displayMenu(){
