@@ -1,6 +1,13 @@
 #include<iostream>
 using namespace std;
 
+class Product {
+    string productID;
+    string productName;
+    int stockQuantity;
+    double price;
+};
+
 void displayMenu(){
     cout << "Inventory Management System\n";
     cout << "1. Please Add Product\n";
