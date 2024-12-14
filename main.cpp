@@ -9,8 +9,12 @@ class Product {
     double price;
 
 public:
+    // Default constructor
     Product() : productID(""),productName(""), stockQuantity(0), price(0.0) {}
 
+    //parameterized constructor
+    Product(string id, string name, int stock, double price) 
+        : productID(id), productName(name), stockQuantity(stock), price(price) {}
 };
 class Inventory {
     map<string, Product> productList;
