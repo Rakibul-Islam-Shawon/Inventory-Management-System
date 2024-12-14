@@ -7,6 +7,10 @@ class Product {
     string productName;
     int stockQuantity;
     double price;
+
+public:
+    Product() : productID(""),productName(""), stockQuantity(0), price(0.0) {}
+
 };
 class Inventory {
     map<string, Product> productList;
@@ -86,5 +90,6 @@ int main(){
         default:
             cout << "Invalid choice! Try again.\n";
         }
-    return 0;
+    }
+    
 }
