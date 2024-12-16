@@ -33,6 +33,12 @@ public:
 
 class Inventory {
     map<string, Product> productList;
+
+public:
+    // Add a product to the inventory
+    void addProduct(const Product& product) {
+        productList[product.getProductID()] = product;
+    }
 };
 
 void displayMenu(){
