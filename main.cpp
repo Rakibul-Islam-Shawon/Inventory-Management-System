@@ -15,7 +15,22 @@ public:
     //parameterized constructor
     Product(string id, string name, int stock, double price) 
         : productID(id), productName(name), stockQuantity(stock), price(price) {}
+    
+    // Getters and Setters
+    string getProductID() const { return productID; }
+    string getProductName() const { return productName; }
+    int getStockQuantity() const { return stockQuantity; }
+    double getPrice() const { return price; }
+    void setStockQuantity(int quantity) { stockQuantity = quantity; }
+    void setPrice(double newPrice) { price = newPrice; }
+
+    // Print Product Information
+    void displayProductInfo() const {
+        cout << "ID: " << productID << ", Name: " << productName 
+                  << ", Stock: " << stockQuantity << ", Price: $" << price << endl;
+    }
 };
+
 class Inventory {
     map<string, Product> productList;
 };
