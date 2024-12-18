@@ -2,6 +2,9 @@
 #include<map>
 #include<fstream>
 #include<sstream>
+#include<string>
+#include<vector>
+
 using namespace std;
 
 class Product {
@@ -23,6 +26,7 @@ public:
     string getProductName() const { return productName; }
     int getStockQuantity() const { return stockQuantity; }
     double getPrice() const { return price; }
+    
     void setStockQuantity(int quantity) { stockQuantity = quantity; }
     void setPrice(double newPrice) { price = newPrice; }
 
@@ -139,9 +143,8 @@ int main(){
             cin >> stock;
             cout << "Enter Product Price: ";
             cin >> price;
-            cin >> price;
+
             inventory.addProduct(Product(id, name, stock, price));
-           
             break;
 
         case 2:
