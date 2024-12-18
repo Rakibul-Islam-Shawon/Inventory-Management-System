@@ -49,6 +49,21 @@ public:
             cout << "Product not found!" << endl;
         }
     }
+
+    // deduct quantity from stock)
+    void processSale(const string& productID, int quantitySold) {
+        if (productList.find(productID) != productList.end()) {
+            int currentStock = productList[productID].getStockQuantity();
+            if (currentStock >= quantitySold) {
+                productList[productID].setStockQuantity(currentStock - quantitySold);
+                cout << "Sale processed for " << quantitySold << " units of product " << productID << endl;
+            } else {
+                cout << "Insufficient stock!" << endl;
+            }
+        } else {
+            cout << "Product not found!" << endl;
+        }
+    }
 };
 
 void displayMenu(){
