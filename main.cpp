@@ -1,5 +1,6 @@
 #include<iostream>
 #include<map>
+#include<fstream>
 using namespace std;
 
 class Product {
@@ -70,6 +71,16 @@ public:
         for (const auto& pair : productList) {
             pair.second.displayProductInfo();
         }
+    }
+
+    // Save inventory to file
+    void saveToFile(const string& filename) {
+        ofstream outFile(filename);
+        for (const auto& pair : productList) {
+            outFile << pair.first << "," << pair.second.getProductName() << ","
+                    << pair.second.getStockQuantity() << "," << pair.second.getPrice() << endl;
+        }
+        outFile.close();
     }
 
 };
