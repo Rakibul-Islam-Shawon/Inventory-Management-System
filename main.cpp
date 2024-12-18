@@ -1,6 +1,7 @@
 #include<iostream>
 #include<map>
 #include<fstream>
+#include<sstream>
 using namespace std;
 
 class Product {
@@ -83,6 +84,23 @@ public:
         outFile.close();
     }
 
+    //Load file 
+    void loadFromFile(const string& filename) {
+        ifstream inFile(filename);
+        string line, id, name;
+        int stock;
+        double price;
+
+        while (getline(inFile, line)) {
+            stringstream ss(line);
+            getline(ss, id, ',');
+            getline(ss, name, ',');
+            ss >> stock >> price;
+            addProduct(Product(id, name, stock, price));
+        }
+        inFile.close();
+    }
+
 };
 
 void displayMenu(){
@@ -99,11 +117,11 @@ void displayMenu(){
 int main(){
     //cout <<" This a project for a store for management purpose"<<endl;
     
+    Inventory inventory;
     int option, stock, quantity;
     string id, name, filename;
     double price;
     
-    displayMenu();
 
     while (true) {
         displayMenu();
@@ -121,7 +139,9 @@ int main(){
             cin >> stock;
             cout << "Enter Product Price: ";
             cin >> price;
-            
+            cin >> price;
+            inventory.addProduct(Product(id, name, stock, price));
+           
             break;
 
         case 2:
@@ -129,6 +149,7 @@ int main(){
             cin >> id;
             cout << "Enter New Stock Quantity: ";
             cin >> stock;
+            inventory.updateProductStock(id, stock);
             break;
 
         case 3:
@@ -136,20 +157,25 @@ int main(){
             cin >> id;
             cout << "Enter Quantity Sold: ";
             cin >> quantity;
+            inventory.processSale(id, quantity);
             break;
 
         case 4:
            
+           inventory.displayStock();
             break;
 
         case 5:
             cout << "Enter filename to save inventory: ";
             cin >> filename;
+            inventory.saveToFile(filename);
             break;
+            
 
         case 6:
             cout << "Enter filename to load inventory: ";
             cin >> filename;
+            inventory.loadFromFile(filename);
             break;
 
         case 7:
