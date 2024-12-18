@@ -39,6 +39,16 @@ public:
     void addProduct(const Product& product) {
         productList[product.getProductID()] = product;
     }
+
+
+    // Update stock quantity
+    void updateProductStock(const string& productID, int newStock) {
+        if (productList.find(productID) != productList.end()) {
+            productList[productID].setStockQuantity(newStock);
+        } else {
+            cout << "Product not found!" << endl;
+        }
+    }
 };
 
 void displayMenu(){
