@@ -64,6 +64,14 @@ public:
             cout << "Product not found!" << endl;
         }
     }
+
+    // Displaying available stock
+    void displayStock() {
+        for (const auto& pair : productList) {
+            pair.second.displayProductInfo();
+        }
+    }
+
 };
 
 void displayMenu(){
